@@ -1,0 +1,86 @@
+#!/bin/bash
+#Student name: Yun Wang, Student number:041069121
+#Course code: CST8102, Lab section: 302
+#Description: This script is designed for lab07 and will be executed to calculate the final grade as well as display the letter grade for a course.
+
+
+echo **********Jeremy Wang is the designer**********
+
+# each user prompt is followed by a loop limiting user to only enter the integers in the range
+read -p "1. Pls enter the Assignment mark(0-40):" var1
+while [ "$var1" -lt 0 -o "$var1" -gt 40 ]
+do
+	read -p "Invalid input, Assignment mark shoule be between 0 and 40. Pls try again:" var1
+done
+
+
+read -p "2. Pls enter the Test 1 mark(0-15):" var2
+while [ "$var2" -lt 0 -o "$var2" -gt 15 ]
+do
+	read -p "Invalid input, Test1 mark shoule be between 0 and 15. Pls try again:" var2
+done
+
+
+read -p "3. Pls enter the Test 2 mark(0-15):" var3
+while [ "$var3" -lt 0 -o "$var3" -gt 15 ]
+do
+	read -p "Invalid input, Test2 mark shoule be between 0 and 15. Pls try again:" var3
+done
+
+
+read -p "4. Pls enter the Final exam mark(0-30):" var4
+while [ "$var4" -lt 0 -o "$var4" -gt 30 ]
+do
+	read -p "Invalid input, Final exam  mark shoule be between 0 and 30. Pls try again:" var4
+done
+
+echo "***********************************************"
+
+# add all the variable value together to get the full marks and assign it to the variable 'sum'
+sum=$(($var1+$var2+$var3+$var4))
+
+
+# some if statements stating different mark ranges and assign different letter grades accordingly
+if [ "$sum" -ge 90 -a "$sum" -le 100 ]
+then
+	grade="A+"
+elif [ "$sum" -ge 85 -a "$sum" -lt 90 ]
+then
+	grade="A"
+elif [ "$sum" -ge 80 -a "$sum" -lt 85 ]
+then
+	grade="A-"
+elif [ "$sum" -ge 77 -a "$sum" -lt 80 ]
+then
+	grade="B+"
+elif [ "$sum" -ge 73 -a "$sum" -lt 77 ]
+then
+	grade="B"
+elif [ "$sum" -ge 70 -a "$sum" -lt 73 ]
+then
+	grade="B-"
+elif [ "$sum" -ge 67 -a "$sum" -lt 70 ]
+then
+	grade="C+"
+elif [ "$sum" -ge 63 -a "$sum" -lt 67 ]
+then
+	grade="C"
+elif [ "$sum" -ge 60 -a "$sum" -lt 63 ]
+then
+	grade="C-"
+elif [ "$sum" -ge 57 -a "$sum" -lt 60 ]
+then
+	grade="D+"
+elif [ "$sum" -ge 53 -a "$sum" -lt 57 ]
+then
+	grade="D"
+elif [ "$sum" -ge 50 -a "$sum" -lt 53 ]
+then
+	grade="D-"
+elif [ "$sum" -ge 0 -a "$sum" -lt 50 ]
+then
+	grade="F"
+fi
+
+# the final sentence concluding the student's full marks and letter grade
+echo "Your final numberic grade is $sum, and your final letter grade is $grade"
