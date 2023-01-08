@@ -1,7 +1,5 @@
 #!/bin/bash
 #Student name: Yun Wang, Student number:041069121
-#Course code: CST8102, Lab section: 302
-#Description: This script is designed for lab07 and will be executed to calculate the final grade as well as display the letter grade for a course.
 
 
 echo **********Jeremy Wang is the designer**********
